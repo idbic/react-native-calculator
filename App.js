@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react"
+import { StatusBar } from "expo-status-bar"
+import { StyleSheet, View, SafeAreaView, Text } from "react-native"
 
 export default function App() {
+  const computedValue = 123456.23
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
+      <SafeAreaView>
+        <Text style={styles.computedValue}>
+          {computedValue.toLocaleString()}
+        </Text>
+      </SafeAreaView>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#202020",
+    justifyContent: "flex-end",
   },
-});
+
+  computedValue: {
+    color: "#fff",
+    fontSize: 40,
+    textAlign: "right",
+    marginRight: 20,
+    marginBottom: 10,
+  },
+})
